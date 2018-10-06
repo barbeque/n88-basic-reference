@@ -3,6 +3,20 @@ title: N88 BASIC reference
 ---
 
 # Commands
+## FILES / LFILES
+*Usage*: `FILES <disk number>`
+List the files that are on disk
+
+*Examples*:
+`FILES`
+List the files on the primary floppy disk.
+
+`FILES 2`
+List the files on the secondary floppy disk.
+
+`LFILES`
+List the files in a linear display instead of columnar.
+
 ## LOAD
 *Usage*: `LOAD [filename] <,R>`
 Load a program from disk.
@@ -13,6 +27,9 @@ Load the `demo` program into RAM.
 
 `LOAD "demo",r`
 Load and immediately run the `demo` program.
+
+`LOAD "2:test.n88"`
+Load the `test.n88` program from the second floppy drive.
 
 ## SAVE
 *Usage*: `SAVE [filename] <,A|,P>`
