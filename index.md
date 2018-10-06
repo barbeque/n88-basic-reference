@@ -1,3 +1,7 @@
+---
+title: N88 BASIC reference
+---
+
 # Commands
 ## SAVE
 *Usage*: `SAVE [filename] <A|P>`
