@@ -13,6 +13,15 @@ Return the shift-JIS character corresponding to an integer character code.
  * `CHR$(&H41)` => "A"
  * `CHR$(&H889F)` => "亜"
 
+## CINT
+*Usage*: `CINT([value])`
+Convert to a 16-bit signed integer.
+
+*Examples*:
+ * `CINT(1.2345)` => 1
+ * `CINT(-3.456)` => -3
+ * `CINT(56789)` => overflow error
+
 ## FILES / LFILES
 *Usage*: `FILES <disk number>`
 List the files that are on disk
