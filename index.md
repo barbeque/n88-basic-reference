@@ -17,6 +17,8 @@ Return the shift-JIS character corresponding to an integer character code.
 *Usage*: `CINT([value])`
 Convert to a 16-bit signed integer.
 
+Values between -32768 and 37267 are valid, everything else gets an overflow error.
+
 *Examples*:
  * `CINT(1.2345)` => 1
  * `CINT(-3.456)` => -3
