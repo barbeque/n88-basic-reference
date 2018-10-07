@@ -42,6 +42,12 @@ Load a program from disk.
  * `LOAD "demo",r` Load and immediately run the `demo` program.
  * `LOAD "2:test.n88"` Load the `test.n88` program from the second floppy drive.
 
+## MON
+*Usage*: `MON`
+Enter machine-language monitor mode.
+
+Press CTRL+B to return to BASIC.
+
 ## POS
 *Usage*: `POS <expression>`
 Returns the horizontal position of the cursor.
