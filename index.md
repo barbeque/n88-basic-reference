@@ -55,6 +55,10 @@ Rename a file on disk.
 *Examples*:
  * `NAME "sumple" as "sample"`
 
+## NEW
+*Usage*: `NEW`
+Obliterate the current program and start from scratch.
+
 ## POS
 *Usage*: `POS <expression>`
 Returns the horizontal position of the cursor.
