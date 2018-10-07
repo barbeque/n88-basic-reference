@@ -21,6 +21,19 @@ Load a program from disk.
  * `LOAD "demo",r` Load and immediately run the `demo` program.
  * `LOAD "2:test.n88"` Load the `test.n88` program from the second floppy drive.
 
+## POS
+*Usage*: `POS <expression>`
+Returns the horizontal position of the cursor.
+
+The value returned is an integer up to the character width of the display.
+
+Useful for word wrapping.
+
+`expression` has no meaning; normally it is 0.
+
+*Examples*:
+ * `POS(0)`: Return the horizontal position of the cursor.
+
 ## SAVE
 *Usage*: `SAVE [filename] <,A|,P>`
 Save the current program to a file on disk. If you provide the same name as an existing file, the existing file will be overwritten.
