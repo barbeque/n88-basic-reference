@@ -3,6 +3,16 @@ title: N88 BASIC reference
 ---
 
 # Commands
+## CHR$
+*Usage*: `CHR$([index])`
+Return the shift-JIS character corresponding to an integer character code.
+
+[Shift-JIS table for reference](http://rikai.com/library/kanjitables/kanji_codes.sjis.shtml)
+
+*Examples*:
+ * `CHR$(&H41)` => "A"
+ * `CHR$(&H889F)` => "亜"
+
 ## FILES / LFILES
 *Usage*: `FILES <disk number>`
 List the files that are on disk
