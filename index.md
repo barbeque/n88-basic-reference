@@ -48,6 +48,13 @@ Enter machine-language monitor mode.
 
 Press CTRL+B to return to BASIC.
 
+## NAME
+*Usage*: `NAME [old file] AS [new file]`
+Rename a file on disk.
+
+*Examples*:
+ * `NAME "sumple" as "sample"`
+
 ## POS
 *Usage*: `POS <expression>`
 Returns the horizontal position of the cursor.
