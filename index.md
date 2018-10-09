@@ -4,9 +4,13 @@ title: N88 BASIC reference
 
 # Commands
 ## BEEP
-*Usage*: `BEEP`
+*Usage*: `BEEP <mode>`
 
 It beeps.
+
+*Examples*:
+ * `BEEP`: Start beeping.
+ * `BEEP 0`: Stop beeping.
 
 ## CHR$
 *Usage*: `CHR$([index])`
