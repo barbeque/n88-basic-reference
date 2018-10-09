@@ -3,6 +3,11 @@ title: N88 BASIC reference
 ---
 
 # Commands
+## BEEP
+*Usage*: `BEEP`
+
+It beeps.
+
 ## CHR$
 *Usage*: `CHR$([index])`
 Return the shift-JIS character corresponding to an integer character code.
