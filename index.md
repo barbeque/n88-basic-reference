@@ -3,6 +3,15 @@ title: N88 BASIC reference
 ---
 
 # Commands
+## BEEP
+*Usage*: `BEEP <mode>`
+
+It beeps.
+
+*Examples*:
+ * `BEEP`: Start beeping.
+ * `BEEP 0`: Stop beeping.
+
 ## CHR$
 *Usage*: `CHR$([index])`
 Return the shift-JIS character corresponding to an integer character code.
@@ -23,6 +32,15 @@ Values between -32768 and 37267 are valid, everything else gets an overflow erro
  * `CINT(1.2345)` => 1
  * `CINT(-3.456)` => -3
  * `CINT(56789)` => overflow error
+
+## CLS
+*Usage*: `CLS <mode>`
+Clear the screen.
+
+Modes:
+ * 1: Clear text screen
+ * 2: Clear graphics screen
+ * 3: Clear both text and graphics screens
 
 ## FILES / LFILES
 *Usage*: `FILES <disk number>`
