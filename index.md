@@ -53,6 +53,27 @@ Modes:
  * 2: Clear graphics screen
  * 3: Clear both text and graphics screens
 
+## DSKF
+*Usage*: `DSKF([drive number]<, parameter>)`
+Get information on a floppy disk inserted into drive `drive number`. Note that drive numbers are 1-indexed.
+
+Parameters you can extract are:
+ * 0 - Maximum track number
+ * 1 - Number of sectors per track
+ * 2 - Single sided (0) or double-sided (1) floppy disk
+ * 3 - Number of clusters per track
+ * 4 - Number of clusters per floppy disk
+ * 5 - Track index containing the directory info
+ * 6 - Number of sectors per cluster
+ * 7 - Start sector of FAT
+ * 8 - Last sector of FAT
+ * 9 - Number of FAT (?)
+ * 10 - Sector index containing ID
+
+*Examples*
+ * `DSKF(1)` Get remaining capacity of the disk in drive 1.
+ * `DSKF(2, 0)`
+
 ## FILES / LFILES
 *Usage*: `FILES <disk number>`
 List the files that are on disk
