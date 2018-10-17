@@ -71,6 +71,14 @@ Load a program from disk.
  * `LOAD "demo",r` Load and immediately run the `demo` program.
  * `LOAD "2:test.n88"` Load the `test.n88` program from the second floppy drive.
 
+## LOCATE
+*Usage*: `LOCATE [x] [y] <Enable Cursor?>`
+Move the text cursor around the screen.
+
+*Examples*:
+ * `LOCATE 0, 0, 0` Move the cursor to the top left of the screen and disable cursor display.
+ * `LOCATE 0, 10` Move the cursor to the left side of the 11th line from the top.
+
 ## MON
 *Usage*: `MON`
 Enter machine-language monitor mode.
