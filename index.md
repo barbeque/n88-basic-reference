@@ -53,6 +53,13 @@ Modes:
  * 2: Clear graphics screen
  * 3: Clear both text and graphics screens
 
+## DELETE
+*Usage*: `DELETE [line number]`
+Delete a line number from the current BASIC program.
+
+*Examples*:
+ * `DELETE 90`: Delete line 90.
+
 ## DSKF
 *Usage*: `DSKF([drive number]<, parameter>)`
 Get information on a floppy disk inserted into drive `drive number`. Note that drive numbers are 1-indexed.
@@ -99,6 +106,13 @@ Load a program from disk.
  * `LOAD "demo",r` Load and immediately run the `demo` program.
  * `LOAD "2:test.n88"` Load the `test.n88` program from the second floppy drive.
 
+## LOC
+*Usage*: `LOC [file handle]`
+Get the current location in an open file.
+
+*Examples*:
+ * `LOC(2)` Get current location in file handle #2.
+
 ## LOCATE
 *Usage*: `LOCATE [x] [y] <Enable Cursor?>`
 Move the text cursor around the screen.
@@ -106,6 +120,13 @@ Move the text cursor around the screen.
 *Examples*:
  * `LOCATE 0, 0, 0` Move the cursor to the top left of the screen and disable cursor display.
  * `LOCATE 0, 10` Move the cursor to the left side of the 11th line from the top.
+
+## LOF
+*Usage*: `LOF [file handle]`
+Get the size of a file.
+
+*Examples*:
+ * `LOF(2)` Get the size of file handle #2.
 
 ## MON
 *Usage*: `MON`
