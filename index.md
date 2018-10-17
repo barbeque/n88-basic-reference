@@ -12,6 +12,17 @@ It beeps.
  * `BEEP`: Start beeping.
  * `BEEP 0`: Stop beeping.
 
+## BLOAD
+*Usage*: `BLOAD [filename] <load address> <,R>`
+Load a machine-language program.
+
+If load address is omitted, it will be loaded to the address specified when the binary was saved with `BSAVE`.
+
+Append `R` to immediately run the program. If a load address is also specified, execution will begin from that address.
+
+*Examples*:
+ * `bload "2:test.bin",&he000` - Load `test.bin` from the secondary disk drive, storing it in memory starting at 0xE000.
+
 ## CHR$
 *Usage*: `CHR$([index])`
 Return the shift-JIS character corresponding to an integer character code.
