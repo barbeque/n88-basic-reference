@@ -83,6 +83,13 @@ List the files that are on disk
  * `FILES 2` List the files on the secondary floppy disk.
  * `LFILES` List the files in a linear display instead of columnar.
 
+## KILL
+*Usage*: `KILL [filename]`
+Delete a file from disk.
+
+*Examples*:
+ * `KILL "2:data"` Erase the file named `data` on the second floppy disk.
+
 ## LOAD
 *Usage*: `LOAD [filename] <,R>`
 Load a program from disk.
