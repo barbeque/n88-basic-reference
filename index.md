@@ -158,6 +158,13 @@ Useful for word wrapping.
 *Examples*:
  * `POS(0)`: Return the horizontal position of the cursor.
 
+## ROLL
+*Usage*: `ROLL [number of pixels]`
+Scroll the graphic screen upward by the pixel count.
+
+*Examples*:
+ * `ROLL 16`: Scroll upward by 16 pixels.
+
 ## SAVE
 *Usage*: `SAVE [filename] <,A|,P>`
 Save the current program to a file on disk. If you provide the same name as an existing file, the existing file will be overwritten.
