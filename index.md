@@ -174,3 +174,10 @@ Save the current program to a file on disk. If you provide the same name as an e
  * `SAVE "myprogram.n88",A` Save the program as `myprogram.n88` in raw ASCII format.
  * `SAVE "myprogram",P` Save the program as `myprogram` in an "encrypted binary format" (probably pre-tokenized/compiled?)
  * `SAVE "2:myprogram.n88"` Save the current program as `myprogram.n88` on the second floppy-disk drive.
+
+## SEARCH
+*Usage*: `SEARCH [array] <, start index> <,step>`
+Find an item in an array, returning the index.
+
+*Examples*:
+ * `NUM = SEARCH(A%, 100, 0, 3)` - Search the `A%` array for the value 100, starting at index 0 and stepping 3 indices every time.
