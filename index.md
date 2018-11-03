@@ -53,6 +53,15 @@ Modes:
  * 2: Clear graphics screen
  * 3: Clear both text and graphics screens
 
+## CSRLIN
+*Usage*: `CSRLIN`
+Return the screen row number that the cursor is on.
+
+In 25-line mode, this will be 0-24.
+In 20-line mode, this will be 0-19.
+
+0 is the topmost row of the screen.
+
 ## DELETE
 *Usage*: `DELETE [line number]`
 Delete a line number from the current BASIC program.
