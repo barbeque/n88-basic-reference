@@ -68,7 +68,7 @@ Variable containing the current date, in YY/MM/DD format.
 
 *Examples*:
  * `DATE$ = "85/08/19"`: Set the computer's date to August 19, 1985.
- * `PRINT MID$(DATE$)`: Print the current month number.
+ * `PRINT MID$(DATE$, 4, 2)`: Print the current month number.
 
 ## DELETE
 *Usage*: `DELETE [line number]`
