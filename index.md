@@ -62,6 +62,14 @@ In 20-line mode, this will be 0-19.
 
 0 is the topmost row of the screen.
 
+## DATE$
+*Usage* `DATE$`
+Variable containing the current date, in YY/MM/DD format.
+
+*Examples*:
+ * `DATE$ = "85/08/19"`: Set the computer's date to August 19, 1985.
+ * `PRINT MID$(DATE$)`: Print the current month number.
+
 ## DELETE
 *Usage*: `DELETE [line number]`
 Delete a line number from the current BASIC program.
