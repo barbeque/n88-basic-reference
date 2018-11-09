@@ -23,6 +23,10 @@ Append `R` to immediately run the program. If a load address is also specified, 
 *Examples*:
  * `bload "2:test.bin",&he000` - Load `test.bin` from the secondary disk drive, storing it in memory starting at 0xE000.
 
+## CALL
+*Usage*: `CALL [variable] (,argument 1) (,argument 2) ...`
+Call a machine-language subroutine. The `variable` argument holds the address of the subroutine to execute from.
+
 ## CHR$
 *Usage*: `CHR$([index])`
 Return the shift-JIS character corresponding to an integer character code.
