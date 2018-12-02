@@ -111,12 +111,19 @@ List the files that are on disk
  * `FILES 2` List the files on the secondary floppy disk.
  * `LFILES` List the files in a linear display instead of columnar.
 
+## FIX
+*Usage*: `FIX([decimal number])`
+Convert a decimal number to an integer, _and floor it_.
+
+*Examples*:
+ * A=1.5 FIX(A) => -1`
+
 ## INT
 *Usage*: `INT([decimal number])`
 Convert a decimal number to an integer, _with rounding_.
 
-*Examples*
- * `A=-1.5 INT(A) = -2`
+*Examples*:
+ * `A=-1.5 INT(A) => -2`
 
 ## KILL
 *Usage*: `KILL [filename]`
