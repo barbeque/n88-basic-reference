@@ -116,7 +116,14 @@ List the files that are on disk
 Convert a decimal number to an integer, _and floor it_.
 
 *Examples*:
- * A=1.5 FIX(A) => -1`
+ * `A=1.5 FIX(A) => -1`
+
+## GOTO
+*Usage*: `GOTO [line number]`
+Jump to a line number of the program.
+
+*Examples*:
+ * `GOTO 1000`
 
 ## INT
 *Usage*: `INT([decimal number])`
