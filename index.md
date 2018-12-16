@@ -74,6 +74,16 @@ Variable containing the current date, in YY/MM/DD format.
  * `DATE$ = "85/08/19"`: Set the computer's date to August 19, 1985.
  * `PRINT MID$(DATE$, 4, 2)`: Print the current month number.
 
+## DEF FN
+*Usage* `DEF FN[NAME][ARGUMENTS] = [BODY]`
+Define a function.
+
+*Examples*:
+```
+110 DEF FNDB(X)=X*2
+120 PRINT "Twice 10 is";FNDB(10)
+```
+
 ## DELETE
 *Usage*: `DELETE [line number]`
 Delete a line number from the current BASIC program.
