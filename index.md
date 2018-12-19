@@ -233,3 +233,12 @@ Find an item in an array, returning the index.
 
 *Examples*:
  * `NUM = SEARCH(A%, 100, 0, 3)` - Search the `A%` array for the value 100, starting at index 0 and stepping 3 indices every time.
+
+## SGN
+*Usage* `SGN [number]`
+Get the negative/positive sign of a number.
+
+*Examples*
+ * `SGN(0.5) => 1`
+ * `SGN(0) => 0`
+ * `SGN(-0.5) => -1`
