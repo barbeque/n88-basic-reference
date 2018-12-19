@@ -238,7 +238,14 @@ Find an item in an array, returning the index.
 *Usage* `SGN [number]`
 Get the negative/positive sign of a number.
 
-*Examples*
+*Examples*:
  * `SGN(0.5) => 1`
  * `SGN(0) => 0`
  * `SGN(-0.5) => -1`
+
+## SPC
+*Usage*: `SPC [number]`
+Print a certain number of spaces. Useful for aligning screen elements in text mode?
+
+*Examples*:
+ * `SPC(7) => _ _ _ _ _ _ _` (seven spaces)
