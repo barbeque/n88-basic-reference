@@ -57,6 +57,10 @@ Modes:
  * 2: Clear graphics screen
  * 3: Clear both text and graphics screens
 
+## CONT
+*Usage*: `CONT`
+Resume execution from a `STOP` or `END` statement.
+
 ## CSRLIN
 *Usage*: `CSRLIN`
 Return the screen row number that the cursor is on.
