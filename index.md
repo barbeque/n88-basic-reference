@@ -104,6 +104,15 @@ Delete a line number from the current BASIC program.
 *Examples*:
  * `DELETE 90`: Delete line 90.
 
+## DIM
+*Usage*: `DIM [NAME]([size0], [size ...])`
+Define an array.
+
+If the array described by `NAME` already exists, you will get a "duplicate definition" error. Use `ERASE` to remove the variable definition and then you can recreate it.
+
+*Examples*:
+ * `DIM MT(3,3,3)`: define a 3D array named MT with 3x3x3 dimensions.
+
 ## DSKF
 *Usage*: `DSKF([drive number]<, parameter>)`
 Get information on a floppy disk inserted into drive `drive number`. Note that drive numbers are 1-indexed.
