@@ -61,6 +61,15 @@ Modes:
 *Usage*: `CONT`
 Resume execution from a `STOP` or `END` statement.
 
+## CSNG
+*Usage*: `CSNG([number])`
+Convert a number to a single-precision float.
+
+*Examples*:
+ * `CSNG(123) => 123`
+ * `CSNG(3.14159) => 3.14159`
+ * `CSNG(-1E+40) => "Overflow" error`
+
 ## CSRLIN
 *Usage*: `CSRLIN`
 Return the screen row number that the cursor is on.
