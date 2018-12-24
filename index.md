@@ -134,6 +134,15 @@ Parameters you can extract are:
  * `DSKF(1)` Get remaining capacity of the disk in drive 1.
  * `DSKF(2, 0)`
 
+## EXP
+*Usage*: `EXP([number])`
+Raise _e_ to the power specified.
+
+*Examples*:
+ * `EXP(3) => 20.0855`
+ * `EXP(-12) => 6.14422E-06`
+ * `EXP(100) => Overflow error`
+
 ## FILES / LFILES
 *Usage*: `FILES <disk number>`
 List the files that are on disk
