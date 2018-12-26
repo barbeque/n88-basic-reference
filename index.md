@@ -169,6 +169,15 @@ Get the current position in a file.
 120 PRINT FPOS(1)
 ```
 
+## FRE
+*Usage*: `FRE([memory type])`
+Get free available memory.
+
+*Examples*:
+ * `FRE(0)` - Get free variable space.
+ * `FRE(1)` - Get free text space.
+ * `FRE(2)` - Get free variable + text space.
+
 ## GOTO
 *Usage*: `GOTO [line number]`
 Jump to a line number of the program.
