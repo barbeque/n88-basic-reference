@@ -195,6 +195,16 @@ Fetch a line from a file, refreshing any `FIELD` variables set previously.
 190 CLOSE:END
 ```
 
+## GOSUB / RETURN
+*Usage*: `GOSUB [line number]`, `RETURN <line number>`
+Jump to a subroutine, or return from one.
+
+RETURNing without GOSUB will throw an error.
+
+*Examples*:
+ * `GOSUB 1000`: Jump to the subroutine at line 1000.
+ * `RETURN 100`: Return from the subroutine, and continue execution at line 100.
+
 ## GOTO
 *Usage*: `GOTO [line number]`
 Jump to a line number of the program.
