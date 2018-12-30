@@ -212,6 +212,14 @@ Jump to a line number of the program.
 *Examples*:
  * `GOTO 1000`
 
+## HEX$
+*Usage*: `HEX$([decimal value])`
+Convert a decimal integer to hexadecimal.
+
+*Examples*:
+ * `HEX$(-32768) => "8000"`
+ * `HEX$(65535) => "FFFF"`
+
 ## INT
 *Usage*: `INT([decimal number])`
 Convert a decimal number to an integer, _with rounding_.
