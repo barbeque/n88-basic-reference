@@ -220,6 +220,26 @@ Convert a decimal integer to hexadecimal.
  * `HEX$(-32768) => "8000"`
  * `HEX$(65535) => "FFFF"`
 
+## INKEY$
+*Usage*: `INKEY$`
+Get the currently held down key. Does not block. Returns empty string if no key is being held down.
+
+*Examples*:
+```
+110 PRINT "Enter any key to end"
+120 A$=INKEY$
+130 IF A$="" THEN 110 ELSE END
+```
+
+## INPUT WAIT
+*Usage*: `INPUT WAIT [time span], [prompt]<;variables>
+Put up an input prompt, but only wait a certain period of time before continuing.
+
+Time span is in tenths of a second, so e.g. 50 is 5 seconds.
+
+*Examples*:
+ * `INPUT WAIT 100, "Your name";NA$` - Display "Your name" prompt, and wait 10 seconds. When a character string is entered, it goes into the variable `NA$`.
+
 ## INT
 *Usage*: `INT([decimal number])`
 Convert a decimal number to an integer, _with rounding_.
