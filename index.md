@@ -240,6 +240,14 @@ Time span is in tenths of a second, so e.g. 50 is 5 seconds.
 *Examples*:
  * `INPUT WAIT 100, "Your name";NA$` - Display "Your name" prompt, and wait 10 seconds. When a character string is entered, it goes into the variable `NA$`.
 
+## INSTR
+*Usage*: `INSTR(needle, haystack)`
+Get the index of a substring inside a string. Returns 0 when not found, otherwise a 1-indexed character index of the start of the string.
+
+*Examples*:
+ * `INSTR("BISCUIT", "CHEESE") => 0`
+ * `INSTR("COLUMNS III", "COLUMNS") => 1`
+
 ## INT
 *Usage*: `INT([decimal number])`
 Convert a decimal number to an integer, _with rounding_.
