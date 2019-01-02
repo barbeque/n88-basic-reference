@@ -334,7 +334,7 @@ Save the current program to a file on disk. If you provide the same name as an e
 
 ## SEARCH
 *Usage*: `SEARCH [array] <, start index> <,step>`
-Find an item in an array, returning the index.
+Find an item in an array, returning the index of the item found.
 
 *Examples*:
  * `NUM = SEARCH(A%, 100, 0, 3)` - Search the `A%` array for the value 100, starting at index 0 and stepping 3 indices every time.
