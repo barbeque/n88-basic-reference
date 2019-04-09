@@ -310,6 +310,22 @@ Rename a file on disk.
 *Usage*: `NEW`
 Obliterate the current program and start from scratch.
 
+## PAINT
+*Usage*: `PAINT (Wx, Wy) <area colour> <border colour>`
+Fill the last shape rendered with the provided colour.
+
+*Examples*:
+```
+110 SCREEN 0,0:CLS 3
+120 X=INT(RND*639):Y=INT(RND*199)
+130 R=RND*50+1:C=RND*6+1
+140 CIRCLE(X,Y),R,C
+150 PAINT(X,Y),C
+160 GOTO 120
+```
+
+Randomly draws filled circles on the screen.
+
 ## POS
 *Usage*: `POS <expression>`
 Returns the horizontal position of the cursor.
