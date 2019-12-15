@@ -1,6 +1,7 @@
 ---
 title: N88 BASIC reference
 ---
+This translation is a work in progress and does not contain all the commands possible in PC-88 BASICs.
 
 # Commands
 ## BEEP
