@@ -1,6 +1,7 @@
 ---
 title: N88 BASIC reference
 ---
+This translation is a work in progress and does not contain all the commands possible in PC-88 BASICs.
 
 # Commands
 ## BEEP
@@ -57,6 +58,19 @@ Modes:
  * 2: Clear graphics screen
  * 3: Clear both text and graphics screens
 
+## CONT
+*Usage*: `CONT`
+Resume execution from a `STOP` or `END` statement.
+
+## CSNG
+*Usage*: `CSNG([number])`
+Convert a number to a single-precision float.
+
+*Examples*:
+ * `CSNG(123) => 123`
+ * `CSNG(3.14159) => 3.14159`
+ * `CSNG(-1E+40) => "Overflow" error`
+
 ## CSRLIN
 *Usage*: `CSRLIN`
 Return the screen row number that the cursor is on.
@@ -91,6 +105,15 @@ Delete a line number from the current BASIC program.
 *Examples*:
  * `DELETE 90`: Delete line 90.
 
+## DIM
+*Usage*: `DIM [NAME]([size0], [size ...])`
+Define an array.
+
+If the array described by `NAME` already exists, you will get a "duplicate definition" error. Use `ERASE` to remove the variable definition and then you can recreate it.
+
+*Examples*:
+ * `DIM MT(3,3,3)`: define a 3D array named MT with 3x3x3 dimensions.
+
 ## DSKF
 *Usage*: `DSKF([drive number]<, parameter>)`
 Get information on a floppy disk inserted into drive `drive number`. Note that drive numbers are 1-indexed.
@@ -112,6 +135,15 @@ Parameters you can extract are:
  * `DSKF(1)` Get remaining capacity of the disk in drive 1.
  * `DSKF(2, 0)`
 
+## EXP
+*Usage*: `EXP([number])`
+Raise _e_ to the power specified.
+
+*Examples*:
+ * `EXP(3) => 20.0855`
+ * `EXP(-12) => 6.14422E-06`
+ * `EXP(100) => Overflow error`
+
 ## FILES / LFILES
 *Usage*: `FILES <disk number>`
 List the files that are on disk
@@ -128,6 +160,52 @@ Convert a decimal number to an integer, _and floor it_.
 *Examples*:
  * `A=1.5 FIX(A) => -1`
 
+## FPOS
+*Usage*: `FPOS([file handle])`
+Get the current position in a file.
+
+*Examples*:
+```
+110 OPEN "2:data" FOR OUTPUT AS #1
+120 PRINT FPOS(1)
+```
+
+## FRE
+*Usage*: `FRE([memory type])`
+Get free available memory.
+
+*Examples*:
+ * `FRE(0)` - Get free variable space.
+ * `FRE(1)` - Get free text space.
+ * `FRE(2)` - Get free variable + text space.
+
+## GET
+*Usage*: `GET [file handle], [variable]`
+Fetch a line from a file, refreshing any `FIELD` variables set previously.
+
+*Examples*:
+```
+110 OPEN "2:address" AS #1
+120 FIELD #1,30 AS A$,20 AS B$,50 AS C$
+130 FOR I=1 TO LOF(1)
+140	GET #1, I
+150	PRINT "NAME",A$
+160	PRINT "TEL",B$
+170	PRINT "ADDRESS",C$
+180 NEXT I
+190 CLOSE:END
+```
+
+## GOSUB / RETURN
+*Usage*: `GOSUB [line number]`, `RETURN <line number>`
+Jump to a subroutine, or return from one.
+
+RETURNing without GOSUB will throw an error.
+
+*Examples*:
+ * `GOSUB 1000`: Jump to the subroutine at line 1000.
+ * `RETURN 100`: Return from the subroutine, and continue execution at line 100.
+
 ## GOTO
 *Usage*: `GOTO [line number]`
 Jump to a line number of the program.
@@ -135,12 +213,48 @@ Jump to a line number of the program.
 *Examples*:
  * `GOTO 1000`
 
+## HEX$
+*Usage*: `HEX$([decimal value])`
+Convert a decimal integer to hexadecimal.
+
+*Examples*:
+ * `HEX$(-32768) => "8000"`
+ * `HEX$(65535) => "FFFF"`
+
+## INKEY$
+*Usage*: `INKEY$`
+Get the currently held down key. Does not block. Returns empty string if no key is being held down.
+
+*Examples*:
+```
+110 PRINT "Enter any key to end"
+120 A$=INKEY$
+130 IF A$="" THEN 110 ELSE END
+```
+
 ## INP
 *Usage*: `INP [I/O port address]`
 Read data from an I/O port specified by the address
 
 *Examples*:
  * `INP(&h02)`: Read from the keyboard port
+
+## INPUT WAIT
+*Usage*: `INPUT WAIT [time span], [prompt]<;variables>
+Put up an input prompt, but only wait a certain period of time before continuing.
+
+Time span is in tenths of a second, so e.g. 50 is 5 seconds.
+
+*Examples*:
+ * `INPUT WAIT 100, "Your name";NA$` - Display "Your name" prompt, and wait 10 seconds. When a character string is entered, it goes into the variable `NA$`.
+
+## INSTR
+*Usage*: `INSTR(needle, haystack)`
+Get the index of a substring inside a string. Returns 0 when not found, otherwise a 1-indexed character index of the start of the string.
+
+*Examples*:
+ * `INSTR("BISCUIT", "CHEESE") => 0`
+ * `INSTR("COLUMNS III", "COLUMNS") => 1`
 
 ## INT
 *Usage*: `INT([decimal number])`
@@ -204,6 +318,22 @@ Rename a file on disk.
 *Usage*: `NEW`
 Obliterate the current program and start from scratch.
 
+## PAINT
+*Usage*: `PAINT (Wx, Wy) <area colour> <border colour>`
+Fill the last shape rendered with the provided colour.
+
+*Examples*:
+```
+110 SCREEN 0,0:CLS 3
+120 X=INT(RND*639):Y=INT(RND*199)
+130 R=RND*50+1:C=RND*6+1
+140 CIRCLE(X,Y),R,C
+150 PAINT(X,Y),C
+160 GOTO 120
+```
+
+Randomly draws filled circles on the screen.
+
 ## POS
 *Usage*: `POS <expression>`
 Returns the horizontal position of the cursor.
@@ -240,7 +370,7 @@ Save the current program to a file on disk. If you provide the same name as an e
 
 ## SEARCH
 *Usage*: `SEARCH [array] <, start index> <,step>`
-Find an item in an array, returning the index.
+Find an item in an array, returning the index of the item found.
 
 *Examples*:
  * `NUM = SEARCH(A%, 100, 0, 3)` - Search the `A%` array for the value 100, starting at index 0 and stepping 3 indices every time.
