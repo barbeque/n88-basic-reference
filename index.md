@@ -240,7 +240,7 @@ Read data from an I/O port specified by the address
  * `INP(&h02)`: Read from the keyboard port
 
 ## INPUT WAIT
-*Usage*: `INPUT WAIT [time span], [prompt]<;variables>
+*Usage*: `INPUT WAIT [time span], [prompt]<;variables>`
 Put up an input prompt, but only wait a certain period of time before continuing.
 
 Time span is in tenths of a second, so e.g. 50 is 5 seconds.
