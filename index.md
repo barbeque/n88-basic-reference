@@ -135,6 +135,13 @@ Jump to a line number of the program.
 *Examples*:
  * `GOTO 1000`
 
+## INP
+*Usage*: `INP [I/O port address]`
+Read data from an I/O port specified by the address
+
+*Examples*:
+ * `INP(&h02)`: Read from the keyboard port
+
 ## INT
 *Usage*: `INT([decimal number])`
 Convert a decimal number to an integer, _with rounding_.
@@ -209,6 +216,10 @@ Useful for word wrapping.
 
 *Examples*:
  * `POS(0)`: Return the horizontal position of the cursor.
+
+## OUT
+*Usage*: `OUT [I/O address] [value]`
+Write a value to an I/O port specified by the address.
 
 ## ROLL
 *Usage*: `ROLL [number of pixels]`
