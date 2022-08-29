@@ -270,6 +270,14 @@ Delete a file from disk.
 *Examples*:
  * `KILL "2:data"` Erase the file named `data` on the second floppy disk.
 
+## LEN
+*Usage*: `LEN([string])`
+Get the length of a string or string variable.
+
+*Examples*:
+ * `LEN(HELLO$)`: Get the length of the `HELLO$` string variable.
+ * `LEN("HI THERE")`: Get the length of the string "HI THERE" (8)
+
 ## LOAD
 *Usage*: `LOAD [filename] <,R>`
 Load a program from disk.
