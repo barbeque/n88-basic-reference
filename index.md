@@ -263,6 +263,13 @@ Convert a decimal number to an integer, _with rounding_.
 *Examples*:
  * `A=-1.5 INT(A) => -2`
 
+## INP
+*Usage*: `INP([port])`
+Read data from the Z80 I/O port (0-255) specified by `port`.
+
+*Examples*:
+ * `INP(&h33)`: Read a byte from port 0x33.
+
 ## KILL
 *Usage*: `KILL [filename]`
 Delete a file from disk.
@@ -325,6 +332,13 @@ Rename a file on disk.
 ## NEW
 *Usage*: `NEW`
 Obliterate the current program and start from scratch.
+
+## OUT
+*Usage*: `OUT [port], [data]`
+Write `data` to the Z80 I/O port (0-255) specified by `port`.
+
+*Examples*:
+ * `OUT &h54, &h03`: Set port $54 (colour palette 0) to $03 (purple.)
 
 ## PAINT
 *Usage*: `PAINT (Wx, Wy) <area colour> <border colour>`
