@@ -4,6 +4,14 @@ title: N88 BASIC reference
 This translation is a work in progress and does not contain all the commands possible in PC-88 BASICs.
 
 # Commands
+## ASC
+*Usage*: `ASC([char])`
+Convert the first character of a string to the numeric ASCII index for it.
+
+*Examples*:
+ * `ASC("X")`: Produces 88 (ASCII 'X')
+ * `ASC("Administrator")`: Produces 65 (ASCII 'A')
+
 ## BEEP
 *Usage*: `BEEP <mode>`
 
@@ -412,3 +420,7 @@ Print a certain number of spaces. Useful for aligning screen elements in text mo
 
 *Examples*:
  * `SPC(7) => _ _ _ _ _ _ _` (seven spaces)
+
+## VAL
+*Usage*: `VAL([string])`
+Parses a string into a number variable.
