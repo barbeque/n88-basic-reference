@@ -3,6 +3,19 @@ title: N88 BASIC reference
 ---
 This translation is a work in progress and does not contain all the commands possible in PC-88 BASICs.
 
+# Structures
+## Labels
+A label provides a line reference that can be called by `GOTO` or `GOSUB` without having to manually track the line number and update it if it changes.
+
+*Example*:
+```
+10 PRINT "HELLO"
+20 GOSUB *WORLD
+30 END
+40 *WORLD: PRINT "WORLD"
+50 RETURN
+```
+
 # Commands
 ## ASC
 *Usage*: `ASC([char])`
@@ -205,13 +218,14 @@ Fetch a line from a file, refreshing any `FIELD` variables set previously.
 ```
 
 ## GOSUB / RETURN
-*Usage*: `GOSUB [line number]`, `RETURN <line number>`
+*Usage*: `GOSUB [line number or label]`, `RETURN <line number>`
 Jump to a subroutine, or return from one.
 
 RETURNing without GOSUB will throw an error.
 
 *Examples*:
  * `GOSUB 1000`: Jump to the subroutine at line 1000.
+ * `GOSUB *INVENTORY`: Jump to a subroutine following the label `*INVENTORY`.
  * `RETURN 100`: Return from the subroutine, and continue execution at line 100.
 
 ## GOTO
