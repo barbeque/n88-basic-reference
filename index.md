@@ -19,6 +19,7 @@ A label provides a line reference that can be called by `GOTO` or `GOSUB` withou
 # Commands
 ## ASC
 *Usage*: `ASC([char])`
+
 Convert the first character of a string to the numeric ASCII index for it.
 
 *Examples*:
@@ -36,6 +37,7 @@ It beeps.
 
 ## BLOAD
 *Usage*: `BLOAD [filename] <load address> <,R>`
+
 Load a machine-language program.
 
 If load address is omitted, it will be loaded to the address specified when the binary was saved with `BSAVE`.
@@ -47,10 +49,12 @@ Append `R` to immediately run the program. If a load address is also specified, 
 
 ## CALL
 *Usage*: `CALL [variable] (,argument 1) (,argument 2) ...`
+
 Call a machine-language subroutine. The `variable` argument holds the address of the subroutine to execute from.
 
 ## CHR$
 *Usage*: `CHR$([index])`
+
 Return the shift-JIS character corresponding to an integer character code.
 
 [Shift-JIS table for reference](http://rikai.com/library/kanjitables/kanji_codes.sjis.shtml)
@@ -61,6 +65,7 @@ Return the shift-JIS character corresponding to an integer character code.
 
 ## CINT
 *Usage*: `CINT([value])`
+
 Convert to a 16-bit signed integer.
 
 Values between -32768 and 37267 are valid, everything else gets an overflow error.
@@ -72,6 +77,7 @@ Values between -32768 and 37267 are valid, everything else gets an overflow erro
 
 ## CLS
 *Usage*: `CLS <mode>`
+
 Clear the screen.
 
 Modes:
@@ -81,6 +87,7 @@ Modes:
 
 ## CONSOLE
 *Usage*: `CONSOLE [scroll start], [scroll number of lines], [display function keys], [colour/monochrome]`
+
 Set modes for text screens.
  - By specifying the "scroll start" and "scroll number," you can define the scrolling area (scroll window) on the screen.
  - `CLS` and `PRINT CHR$(12)` work on this scroll window.
@@ -94,10 +101,12 @@ Set modes for text screens.
 
 ## CONT
 *Usage*: `CONT`
+
 Resume execution from a `STOP` or `END` statement.
 
 ## CSNG
 *Usage*: `CSNG([number])`
+
 Convert a number to a single-precision float.
 
 *Examples*:
@@ -107,6 +116,7 @@ Convert a number to a single-precision float.
 
 ## CSRLIN
 *Usage*: `CSRLIN`
+
 Return the screen row number that the cursor is on.
 
 In 25-line mode, this will be 0-24.
@@ -116,6 +126,7 @@ In 20-line mode, this will be 0-19.
 
 ## DATE$
 *Usage* `DATE$`
+
 Variable containing the current date, in YY/MM/DD format.
 
 *Examples*:
@@ -124,6 +135,7 @@ Variable containing the current date, in YY/MM/DD format.
 
 ## DEF FN
 *Usage* `DEF FN[NAME][ARGUMENTS] = [BODY]`
+
 Define a function.
 
 *Examples*:
@@ -134,6 +146,7 @@ Define a function.
 
 ## DELETE
 *Usage*: `DELETE [line number]`
+
 Delete a line number from the current BASIC program.
 
 *Examples*:
@@ -141,6 +154,7 @@ Delete a line number from the current BASIC program.
 
 ## DIM
 *Usage*: `DIM [NAME]([size0], [size ...])`
+
 Define an array.
 
 If the array described by `NAME` already exists, you will get a "duplicate definition" error. Use `ERASE` to remove the variable definition and then you can recreate it.
@@ -150,6 +164,7 @@ If the array described by `NAME` already exists, you will get a "duplicate defin
 
 ## DSKF
 *Usage*: `DSKF([drive number]<, parameter>)`
+
 Get information on a floppy disk inserted into drive `drive number`. Note that drive numbers are 1-indexed.
 
 Parameters you can extract are:
@@ -171,6 +186,7 @@ Parameters you can extract are:
 
 ## EXP
 *Usage*: `EXP([number])`
+
 Raise _e_ to the power specified.
 
 *Examples*:
@@ -180,6 +196,7 @@ Raise _e_ to the power specified.
 
 ## FILES / LFILES
 *Usage*: `FILES <disk number>`
+
 List the files that are on disk
 
 *Examples*:
@@ -189,6 +206,7 @@ List the files that are on disk
 
 ## FIX
 *Usage*: `FIX([decimal number])`
+
 Convert a decimal number to an integer, _and floor it_.
 
 *Examples*:
@@ -196,6 +214,7 @@ Convert a decimal number to an integer, _and floor it_.
 
 ## FPOS
 *Usage*: `FPOS([file handle])`
+
 Get the current position in a file.
 
 *Examples*:
@@ -206,6 +225,7 @@ Get the current position in a file.
 
 ## FRE
 *Usage*: `FRE([memory type])`
+
 Get free available memory.
 
 *Examples*:
@@ -215,6 +235,7 @@ Get free available memory.
 
 ## GET
 *Usage*: `GET [file handle], [variable]`
+
 Fetch a line from a file, refreshing any `FIELD` variables set previously.
 
 *Examples*:
@@ -232,6 +253,7 @@ Fetch a line from a file, refreshing any `FIELD` variables set previously.
 
 ## GOSUB / RETURN
 *Usage*: `GOSUB [line number or label]`, `RETURN <line number>`
+
 Jump to a subroutine, or return from one.
 
 RETURNing without GOSUB will throw an error.
@@ -243,6 +265,7 @@ RETURNing without GOSUB will throw an error.
 
 ## GOTO
 *Usage*: `GOTO [line number]`
+
 Jump to a line number of the program.
 
 *Examples*:
@@ -250,6 +273,7 @@ Jump to a line number of the program.
 
 ## HEX$
 *Usage*: `HEX$([decimal value])`
+
 Convert a decimal integer to hexadecimal.
 
 *Examples*:
@@ -258,6 +282,7 @@ Convert a decimal integer to hexadecimal.
 
 ## INKEY$
 *Usage*: `INKEY$`
+
 Get the currently held down key. Does not block. Returns empty string if no key is being held down.
 
 *Examples*:
@@ -269,6 +294,7 @@ Get the currently held down key. Does not block. Returns empty string if no key 
 
 ## INP
 *Usage*: `INP [I/O port address]`
+
 Read data from an I/O port specified by the address
 
 *Examples*:
@@ -276,6 +302,7 @@ Read data from an I/O port specified by the address
 
 ## INPUT WAIT
 *Usage*: `INPUT WAIT [time span], [prompt]<;variables>`
+
 Put up an input prompt, but only wait a certain period of time before continuing.
 
 Time span is in tenths of a second, so e.g. 50 is 5 seconds.
@@ -285,6 +312,7 @@ Time span is in tenths of a second, so e.g. 50 is 5 seconds.
 
 ## INSTR
 *Usage*: `INSTR(needle, haystack)`
+
 Get the index of a substring inside a string. Returns 0 when not found, otherwise a 1-indexed character index of the start of the string.
 
 *Examples*:
@@ -293,6 +321,7 @@ Get the index of a substring inside a string. Returns 0 when not found, otherwis
 
 ## INT
 *Usage*: `INT([decimal number])`
+
 Convert a decimal number to an integer, _with rounding_.
 
 *Examples*:
@@ -300,6 +329,7 @@ Convert a decimal number to an integer, _with rounding_.
 
 ## INP
 *Usage*: `INP([port])`
+
 Read data from the Z80 I/O port (0-255) specified by `port`.
 
 *Examples*:
@@ -307,6 +337,7 @@ Read data from the Z80 I/O port (0-255) specified by `port`.
 
 ## KILL
 *Usage*: `KILL [filename]`
+
 Delete a file from disk.
 
 *Examples*:
@@ -314,6 +345,7 @@ Delete a file from disk.
 
 ## LEN
 *Usage*: `LEN([string])`
+
 Get the length of a string or string variable.
 
 *Examples*:
@@ -322,6 +354,7 @@ Get the length of a string or string variable.
 
 ## LOAD
 *Usage*: `LOAD [filename] <,R>`
+
 Load a program from disk.
 
 *Examples*:
@@ -331,6 +364,7 @@ Load a program from disk.
 
 ## LOC
 *Usage*: `LOC [file handle]`
+
 Get the current location in an open file.
 
 *Examples*:
@@ -338,6 +372,7 @@ Get the current location in an open file.
 
 ## LOCATE
 *Usage*: `LOCATE [x] [y] <Enable Cursor?>`
+
 Move the text cursor around the screen.
 
 *Examples*:
@@ -346,6 +381,7 @@ Move the text cursor around the screen.
 
 ## LOF
 *Usage*: `LOF [file handle]`
+
 Get the size of a file.
 
 *Examples*:
@@ -353,12 +389,14 @@ Get the size of a file.
 
 ## MON
 *Usage*: `MON`
+
 Enter machine-language monitor mode.
 
 Press CTRL+B to return to BASIC.
 
 ## NAME
 *Usage*: `NAME [old file] AS [new file]`
+
 Rename a file on disk.
 
 *Examples*:
@@ -366,10 +404,12 @@ Rename a file on disk.
 
 ## NEW
 *Usage*: `NEW`
+
 Obliterate the current program and start from scratch.
 
 ## OUT
 *Usage*: `OUT [port], [data]`
+
 Write `data` to the Z80 I/O port (0-255) specified by `port`.
 
 *Examples*:
@@ -377,6 +417,7 @@ Write `data` to the Z80 I/O port (0-255) specified by `port`.
 
 ## PAINT
 *Usage*: `PAINT (Wx, Wy) <area colour> <border colour>`
+
 Fill the last shape rendered with the provided colour.
 
 *Examples*:
@@ -393,6 +434,7 @@ Randomly draws filled circles on the screen.
 
 ## POS
 *Usage*: `POS <expression>`
+
 Returns the horizontal position of the cursor.
 
 The value returned is an integer up to the character width of the display.
@@ -406,10 +448,12 @@ Useful for word wrapping.
 
 ## OUT
 *Usage*: `OUT [I/O address] [value]`
+
 Write a value to an I/O port specified by the address.
 
 ## ROLL
 *Usage*: `ROLL [number of pixels]`
+
 Scroll the graphic screen upward by the pixel count.
 
 *Examples*:
@@ -417,6 +461,7 @@ Scroll the graphic screen upward by the pixel count.
 
 ## SAVE
 *Usage*: `SAVE [filename] <,A|,P>`
+
 Save the current program to a file on disk. If you provide the same name as an existing file, the existing file will be overwritten.
 
 *Examples*:
@@ -427,6 +472,7 @@ Save the current program to a file on disk. If you provide the same name as an e
 
 ## SEARCH
 *Usage*: `SEARCH [array] <, start index> <,step>`
+
 Find an item in an array, returning the index of the item found.
 
 *Examples*:
@@ -434,6 +480,7 @@ Find an item in an array, returning the index of the item found.
 
 ## SGN
 *Usage* `SGN [number]`
+
 Get the negative/positive sign of a number.
 
 *Examples*:
@@ -443,6 +490,7 @@ Get the negative/positive sign of a number.
 
 ## SPC
 *Usage*: `SPC [number]`
+
 Print a certain number of spaces. Useful for aligning screen elements in text mode?
 
 *Examples*:
@@ -450,4 +498,5 @@ Print a certain number of spaces. Useful for aligning screen elements in text mo
 
 ## VAL
 *Usage*: `VAL([string])`
+
 Parses a string into a number variable.
