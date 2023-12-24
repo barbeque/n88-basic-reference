@@ -79,6 +79,19 @@ Modes:
  * 2: Clear graphics screen
  * 3: Clear both text and graphics screens
 
+## CONSOLE
+*Usage*: `CONSOLE [scroll start], [scroll number of lines], [display function keys], [colour/monochrome]`
+Set modes for text screens.
+ - By specifying the "scroll start" and "scroll number," you can define the scrolling area (scroll window) on the screen.
+ - `CLS` and `PRINT CHR$(12)` work on this scroll window.
+ - "Scroll start line" indicates the line from which to start scrolling.
+ - If you pass `1` to "display function keys," the programmable function key help will appear on the bottommost line of the display. Passing `0` disables this feature.
+ - Setting "colour/monochrome" to `1` applies colour text mode, and `0` is monochrome.
+
+*Examples*:
+ * `CONSOLE 0, 10, 1, 1`: Sets the first ten lines as a scroll area and disables function key display.
+ * `CONSOLE , , , 1`: Leaves all other settings as they were and enables colour text expression.
+
 ## CONT
 *Usage*: `CONT`
 Resume execution from a `STOP` or `END` statement.
